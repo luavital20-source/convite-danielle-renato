@@ -718,8 +718,7 @@ const CONFIG = {
   horario:  'às 11h',
   mapsUrl:  'https://maps.google.com/maps/place//data=!4m2!3m1!1s0x94cf25a47b5bf991:0x642d5c147e5414a3?entry=s&sa=X&ved=2ahUKEwiXl4eK29yWAxUKGLkGHfApKbkQ4kB6BAgWEAA&hl=pt',
 
-  // TODO(GL Creative): confirmar WhatsApp real do casal antes de publicar
-  whatsapp: '5500000000000',
+  whatsapp: '5511997742725',
 
   musica:  'A definir',
   artista: '',
@@ -975,7 +974,7 @@ function copyPix(btn){var k="60921492308";var l=btn?btn.querySelector(".pix-labe
 <script>
 /* ─── Pix copia e cola (BR Code) com o valor de cada cota — mesma chave do convite ─── */
 (function(){
-  var PIX_CHAVE='00000000000', PIX_TITULAR='Danielle e Renato', PIX_CIDADE='Jundiai'; // TODO(GL Creative): chave Pix real do casal
+  var PIX_CHAVE='0d5b75f1-7a04-4206-a7ef-890a4839d5a6', PIX_TITULAR='Danielle e Renato', PIX_CIDADE='Jundiai';
   function crc16(str){var c=0xFFFF;for(var i=0;i<str.length;i++){c^=str.charCodeAt(i)<<8;for(var j=0;j<8;j++)c=(c&0x8000)?((c<<1)^0x1021)&0xFFFF:(c<<1)&0xFFFF;}return c.toString(16).toUpperCase().padStart(4,'0');}
   function ascii(str){return str.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^\x20-\x7E]/g,'').toUpperCase();}
   function pixCode(valor){var tlv=function(id,v){return id+String(v.length).padStart(2,'0')+v;};var p='';p+=tlv('00','01');p+=tlv('26',tlv('00','br.gov.bcb.pix')+tlv('01',PIX_CHAVE));p+=tlv('52','0000');p+=tlv('53','986');if(valor)p+=tlv('54',Number(valor).toFixed(2));p+=tlv('58','BR');p+=tlv('59',ascii(PIX_TITULAR).slice(0,25));p+=tlv('60',ascii(PIX_CIDADE).slice(0,15));p+=tlv('62',tlv('05','***'));p+='6304';return p+crc16(p);}
